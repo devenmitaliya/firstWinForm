@@ -20,7 +20,7 @@ namespace LoginForm
             InitializeComponent();
 
         }
-        private NpgsqlConnection cn = new NpgsqlConnection("Server=cipg01;port=5432;Database=GROUPD;User Id=postgres;Password=123456;");
+        private NpgsqlConnection cn = new NpgsqlConnection("<YOUR-CONNECTION-STRING-HERE>");
         private System.Windows.Forms.Label lblMessage;
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace LoginForm
         {
             string inputEmail = textBox1.Text.Trim();
             MailMessage msg = new MailMessage();
-            msg.From = new MailAddress("tailoranup071@gmail.com");
+            msg.From = new MailAddress("<GMAIL-ID>");
             msg.To.Add(textBox1.Text.Trim());
             msg.Subject = "✅ Forgot Password Notification";
 
@@ -41,11 +41,11 @@ namespace LoginForm
             smt.Port = 587;
             smt.EnableSsl = true;
             NetworkCredential ntcd = new NetworkCredential();
-            ntcd.UserName = "tailoranup071@gmail.com";
-            ntcd.Password = "wlli nhcb uvvh pcnl";
+            ntcd.UserName = "<GMAIL-ADDRESS>";
+            ntcd.Password = "<GMAIL-PASSKEY>";
             smt.Credentials = ntcd;
 
-            using (NpgsqlConnection connection = new NpgsqlConnection("Server=cipg01;port=5432;Database=GROUPD;User Id=postgres;Password=123456;"))
+            using (NpgsqlConnection connection = new NpgsqlConnection("<YOUR-CONNECTION-STRING-HERE>"))
             {
                 try
                 {
@@ -141,7 +141,7 @@ namespace LoginForm
         }
 
         MailMessage msg = new MailMessage();
-        msg.From = new MailAddress("tailoranup071@gmail.com");
+        msg.From = new MailAddress("<GMAIL-ADDRESS>");
         msg.To.Add(textBox1.Text.Trim());
         msg.Subject = "✅ Successful Login Notification";
         msg.Body = $@"Dear User,
@@ -161,7 +161,7 @@ Group D,
 Deven Mitaliya.";
 
         MailMessage msg2 = new MailMessage();
-        msg2.From = new MailAddress("tailoranup071@gmail.com");
+        msg2.From = new MailAddress("<GMAIL-ADDRESS>");
         msg2.To.Add(textBox1.Text.Trim());
         msg2.Subject = "⚠️🛑 Suspicious Login Attempt Notification 🛑⚠️";
         msg2.Body = $@"Dear User,
@@ -183,13 +183,13 @@ Deven Mitaliya";
         smt.Port = 587;
         smt.EnableSsl = true;
         NetworkCredential ntcd = new NetworkCredential();
-        ntcd.UserName = "tailoranup071@gmail.com";
-        ntcd.Password = "wlli nhcb uvvh pcnl";
+        ntcd.UserName = "<GMAIL-ADDRESS>";
+        ntcd.Password = "<GMAIL-PASSKEY>";
         smt.Credentials = ntcd;
 
 
 
-        using (NpgsqlConnection connection = new NpgsqlConnection("Server=cipg01;port=5432;Database=GROUPD;User Id=postgres;Password=123456;"))
+        using (NpgsqlConnection connection = new NpgsqlConnection("<YOUR-CONNECTION-STRING-HERE>"))
         {
             try
             {
