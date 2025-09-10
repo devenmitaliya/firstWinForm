@@ -13,7 +13,7 @@ namespace FirstWinForm;
 public partial class CRUDdemo : Form
 {
     DataTable dt = new DataTable();
-    private NpgsqlConnection cn = new NpgsqlConnection("Server=cipg01;port=5432;Database=GROUPD;User Id=postgres;Password=123456;");
+    private NpgsqlConnection cn = new NpgsqlConnection("<YOUR-SQL-CONNETION-STRING-HERE>");
     private Label label1;
     private Label label2;
     private Label label3;
